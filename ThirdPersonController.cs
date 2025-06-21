@@ -34,7 +34,7 @@ namespace StarterAssets
 
         [Space(10)]
         [Tooltip("The height the player can jump")]
-        public float JumpHeight = 0.6f;
+        public float JumpHeight = 0.8f;
 
         [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
         public float Gravity = -15.0f;
@@ -319,6 +319,9 @@ namespace StarterAssets
                     {
                         _animator.SetBool(_animIDJump, true);
                     }
+
+                    // Prevent jump from being triggered continuously
+                    _input.jump = false;
                 }
 
                 // jump timeout
